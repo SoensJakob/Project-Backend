@@ -1,27 +1,46 @@
 from RPi import GPIO
-
+from serial import Serial, PARITY_NONE 
+import threading
+import time
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(6,GPIO.OUT)
 
-GPIO.setup(17,GPIO.OUT)
-GPIO.setup(21,GPIO.IN, GPIO.PUD_UP)
+def read_data():
+    with Serial('/dev/ttyS0', 9600, bytesize=8, parity=PARITY_NONE, stopbits=1) as port:
+        while True:
+            data = "data"
+            data += "\n"
+                
+            port.write(data.encode('utf-8'))
+            
+            line = port.readline()
+            
+            line = line.decode('utf-8')
+            line = str(line)
+            data = line.strip("\r\n")
+            if data:
+                print(data)
+            else:
+                print("Data is aan het inlezen.")
+            
+            time.sleep(30)
 
-toggle = 0
+
+        
+
+
+threading.Timer(30, read_data).start()
+
+
 
 try:
+    p = GPIO.PWM(6 , 100)
+    p.start(0)
+    
     while True:
-        knop_status = GPIO.input(21)
-        if knop_status == 0:
-            if toggle == 1:
-                toggle = 0
-            else:
-                toggle = 1
-        
-        if toggle == 1:
-            GPIO.output(17,GPIO.HIGH)
-        else:
-            GPIO.output(17,GPIO.LOW)
-        
+        p.ChangeDutyCycle(50)
+    
         
 
 except KeyboardInterrupt as e:
@@ -29,4 +48,5 @@ except KeyboardInterrupt as e:
 
 finally:
     print("--END--")
+    
     GPIO.cleanup()
