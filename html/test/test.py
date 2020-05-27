@@ -7,7 +7,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6,GPIO.OUT)
 
 def read_data():
-    with Serial('/dev/ttyS0', 9600, bytesize=8, parity=PARITY_NONE, stopbits=1) as port:
+    with Serial('/dev/ttyUSB0', 9600, bytesize=8, parity=PARITY_NONE, stopbits=1) as port:
         while True:
             data = "data"
             data += "\n"
@@ -19,18 +19,17 @@ def read_data():
             line = line.decode('utf-8')
             line = str(line)
             data = line.strip("\r\n")
-            if data:
-                print(data)
-            else:
-                print("Data is aan het inlezen.")
             
-            time.sleep(30)
+            
+            if data == 0 or data == "Sensor ready.":
+                print("De data wordt klaar gemaakt.")
+            elif data:
+                data = data.split(",")
+                print(data)
+            
+            time.sleep(5)
 
-
-        
-
-
-threading.Timer(30, read_data).start()
+threading.Timer(5, read_data).start()
 
 
 

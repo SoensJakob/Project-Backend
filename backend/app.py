@@ -54,7 +54,7 @@ def switch_light(data):
     if lamp_id == "2":
         lees_knop(20)
     # vraag de (nieuwe) status op van de lamp
-    data = DataRepository.read_status_lamp_by_id(lamp_id)
+    data = DataRepository.read_status_lamp_by_id(lamp_id) 
     socketio.emit('B2F_verandering_lamp', {'lamp': data})
 
 
