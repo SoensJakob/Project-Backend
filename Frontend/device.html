@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="nl"> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sleep Easy</title>
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ber6ijf.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body class="o-row--grey">
+    <div class="c-header__mobile">
+      <nav class="c-mobile-nav">
+        <ul class="o-list c-mobile-nav__list">
+          <li class="c-mobile-nav__item">
+            <a href="index.html" class="c-nav__link">Home</a>
+          </li>
+          <li class="c-mobile-nav__item">
+            <a href="device.html" class="c-nav__link c-nav__link--active">Toestel</a>
+          </li>
+          <li class="c-mobile-nav__item">
+            <a href="historiek.html" class="c-nav__link">Historiek</a>
+          </li> 
+        </ul>
+      </nav>
+    </div>
+    <header class="o-row o-row-header o-row--md o-row--white js-header">
+      <div class="o-container ">
+        <div class="c-header ">
+          <div class="c-mobile-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__open js-menu"tabindex="0" width="36" height="36" viewBox="0 0 36 36">
+              <g id="Title" transform="translate(-7 -37)">
+                <g id="SideMenu" transform="translate(-5.5 21.5)">
+                  <rect id="Rectangle_77" data-name="Rectangle 77" width="36" height="36" transform="translate(12.5 15.5)" fill="#fff"/>
+                  <g id="Group_6" data-name="Group 6">
+                    <line id="Line_1" data-name="Line 1" x2="18" transform="translate(21.5 27.5)" fill="none" stroke="#333" stroke-width="2"/>
+                    <line id="Line_2" data-name="Line 2" x2="10" transform="translate(25.5 33.5)" fill="none" stroke="#333" stroke-width="2"/>
+                    <line id="Line_3" data-name="Line 3" x2="18" transform="translate(21.5 39.5)" fill="none" stroke="#333" stroke-width="2"/>
+                  </g>
+                </g>
+              </g>
+            </svg>  
+            
+            <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__close u-display-none js-close" tabindex="0" width="36" height="36" viewBox="0 0 36 36">
+              <g id="Group_78" data-name="Group 78" transform="translate(-7 -38)">
+                <rect id="Rectangle_81" data-name="Rectangle 81" width="36" height="36" transform="translate(7 38)" fill="none"/>
+                <g id="close-24px" transform="translate(13 44)">
+                  <path id="Path_15" data-name="Path 15" d="M0,0H24V24H0Z" fill="none"/>
+                  <path id="Path_16" data-name="Path 16" d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/>
+                </g>
+              </g>
+            </svg>
+            
+              
+          </div>
+          <div class="c-header__logo u-3-of-5-bp4 u-1-of-2-bp3">
+            <h2 class="c-logo">
+                Sleep Easy
+            </h2>
+          </div>
+          <div class="c-header__nav">
+            <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                <li class="c-nav__item">
+                  <a href="index.html" class="c-nav__link ">Home</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="device.html" class="c-nav__link c-nav__link--active">Toestel</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="historiek.html" class="c-nav__link">Historiek</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          
+        </div>
+        
+      </div>
+    </header>
+    <section class="o-row o-row--lg">
+      <div class="o-container">
+        <article class="o-section o-section--lg">
+          <div class="o-layout o-layout--align-stretch o-layout--gutter-md o-layout--justify-space-around">
+            <div class="o-layout__item c-device-item u-1-of-3-bp3 u-1-of-2-bp1 ">
+              <div class="c-device">
+                <figure class="c-figure u-mb-md">
+                  <svg id="_x33_0" enable-background="new 0 0 64 64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g><path d="m20 12v4c0 1.654 1.346 3 3 3h3v-2h-3c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h3v-2h-3c-1.654 0-3 1.346-3 3z"/><path d="m33 9h-2c-1.654 0-3 1.346-3 3v4c0 1.654 1.346 3 3 3h2c1.654 0 3-1.346 3-3v-4c0-1.654-1.346-3-3-3zm1 7c0 .552-.448 1-1 1h-2c-.552 0-1-.448-1-1v-4c0-.552.448-1 1-1h2c.552 0 1 .448 1 1z"/><path d="m42 13h-4v2h4v2h-2c-1.103 0-2 .897-2 2v2c0 1.103.897 2 2 2h4v-2h-4v-2h2c1.103 0 2-.897 2-2v-2c0-1.103-.897-2-2-2z"/><path d="m32 33.495-6.864 7.723c-1.377 1.549-2.136 3.543-2.136 5.616 0 3.504 2.204 6.686 5.485 7.916l2.515.943v3.307h2v-3.307l2.515-.943c3.281-1.23 5.485-4.412 5.485-7.916 0-2.073-.759-4.067-2.136-5.616zm2.812 19.382-1.812.68v-2.142l3.707-3.707-1.414-1.414-2.293 2.292v-9.586h-2v6.586l-2.293-2.293-1.414 1.414 3.707 3.707v5.142l-1.812-.68c-2.505-.938-4.188-3.366-4.188-6.042 0-1.583.579-3.105 1.63-4.288l5.37-6.041 5.37 6.041c1.051 1.183 1.63 2.705 1.63 4.288 0 2.676-1.683 5.104-4.188 6.043z"/><path d="m56.789 16.209c.125-.728.211-1.464.211-2.209 0-7.168-5.832-13-13-13-3.289 0-6.374 1.204-8.78 3.409-2.937-2.205-6.532-3.409-10.22-3.409-8.661 0-15.893 6.544-16.869 15.049-4.004.435-7.131 3.834-7.131 7.951 0 4.411 3.589 8 8 8h10.586l-9.586 9.586c-.645.644-1 1.502-1 2.414s.355 1.77 1 2.414l.586.586c.971.971 2.487 1.209 3.727.717l1.486 12.634c.179 1.51 1.46 2.649 2.979 2.649h26.443c1.52 0 2.801-1.139 2.979-2.649l1.484-12.613c.412.171.857.262 1.316.262.912 0 1.77-.355 2.414-1l.586-.586c.645-.645 1-1.502 1-2.414s-.355-1.77-1-2.414l-9.586-9.586h10.586c4.411 0 8-3.589 8-8 0-3.795-2.659-6.975-6.211-7.791zm-10.574 43.907c-.06.504-.486.884-.993.884h-26.444c-.507 0-.934-.38-.993-.884l-1.63-13.857 15.845-15.845 15.845 15.845zm6.785-16.116c0 .378-.147.732-.414 1l-.586.586c-.535.533-1.465.533-2 0l-17.293-17.293c-.195-.195-.451-.293-.707-.293s-.512.098-.707.293l-17.293 17.293c-.535.533-1.465.533-2 0l-.586-.586c-.267-.268-.414-.622-.414-1s.147-.732.414-1l18.465-18.465c1.17-1.17 3.072-1.17 4.242 0l18.465 18.465c.267.268.414.622.414 1zm2-14h-12.586l-6.879-6.879c-1.949-1.949-5.121-1.949-7.07 0l-6.879 6.879h-12.586c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6h2c0-4.025-2.99-7.355-6.864-7.91.944-7.412 7.284-13.09 14.864-13.09 3.523 0 6.949 1.245 9.647 3.507l.72.603.646-.68c2.108-2.212 4.944-3.43 7.987-3.43 6.065 0 11 4.935 11 11 0 .679-.083 1.349-.205 2.01-4.316.111-7.795 3.648-7.795 7.99h2c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6z"/></g></svg>
+                </figure>
+                <div class="c-settings js-settings"> 
+                  <h2>Luchtreiniger</h2>
+                  <div class="o-layout o-layout--align-center o-layout--justify-space-between">
+                    <p class="c-btn__lead">Automatisch </p> 
+                     
+                    <label class="c-btn">
+                      <input type="checkbox" class="js-auto" data-sensor-id="5" >
+                      <span class="c-btn__slider  c-btn__round"></span>
+                    </label>
+                  </div>
+                  
+                  <div class="o-layout o-layout--align-center o-layout--justify-space-between">
+                    <p class="c-btn__lead">Aan/Uit</p>
+                    <label class="c-btn">
+                      <input type="checkbox" class="js-switch" data-sensor-id="5">
+                      <span class="c-btn__slider c-btn__round"></span>
+                    </label>
+                  </div>
+                  <div class="c-settings__border">
+                    <div class="o-layout c-settings__options o-layout--align-center o-layout--justify-space-between">
+                      <p class="c-circle c-circle--lg js-switch c-circle--active" data-sensor-id="5" data-strength="LOW">1</p>
+                      <p class="c-circle c-circle--lg js-switch" data-sensor-id="5" data-strength="MEDIUM">2</p>
+                      <p class="c-circle c-circle--lg js-switch" data-sensor-id="5" data-strength="HIGH">3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-layout__item c-device-item u-1-of-3-bp3 u-1-of-2-bp1">
+              <div class="c-device">
+                <figure class="c-figure u-mb-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 6.82666 8.533325000000001" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs><style type="text/css">
+   
+                    .fil1 {fill:none}
+                    .fil0 {fill:black;fill-rule:nonzero}
+                   
+                  </style></defs><g><path class="fil0" d="M3.4135 1.05129c-2.02356,2.2072 -1.95481,3.64009 -1.23122,4.31216 0.323161,0.30015 0.776677,0.450213 1.23096,0.450189 0.454287,-1.9685e-005 0.907819,-0.150138 1.23102,-0.450323 0.723677,-0.67215 0.792594,-2.10505 -1.23076,-4.31202zm-1.33997 4.42903c-0.787343,-0.731283 -0.883445,-2.26828 1.27746,-4.59693 0.00243701,-0.00304331 0.00512598,-0.00594882 0.00807087,-0.0086811 0.0323701,-0.0300669 0.0829961,-0.0281969 0.113063,0.00417323l-0.000133858 0.000122047c2.16491,2.33089 2.06895,3.86935 1.28102,4.60119 -0.353705,0.328516 -0.847134,0.492803 -1.33977,0.492827 -0.49263,2.75591e-005 -0.986039,-0.164205 -1.33971,-0.492693z"/><path class="fil0" d="M2.73591 3.62875c0,-0.0971378 0.0244409,-0.179988 0.0733268,-0.24824 0.0488858,-0.068248 0.119992,-0.102213 0.213004,-0.102213 0.0857087,0 0.156496,0.0304724 0.212366,0.0914213 0.056185,0.0612638 0.084437,0.151102 0.084437,0.269508 0,0.115228 -0.0285669,0.20411 -0.0853898,0.266331 -0.0565039,0.0622165 -0.126343,0.0933268 -0.209512,0.0933268 -0.0825315,0 -0.151098,-0.0304724 -0.206016,-0.0920591 -0.0549173,-0.0612638 -0.0822165,-0.153957 -0.0822165,-0.278075zm0.291091 -0.235224c-0.0415827,0 -0.076185,0.0180945 -0.103803,0.0539646 -0.0276181,0.0358701 -0.0412677,0.101898 -0.0412677,0.198083 0,0.0872953 0.0139685,0.148878 0.0415866,0.184752 0.0279331,0.0355512 0.0625354,0.0533268 0.103484,0.0533268 0.0419016,0 0.0768228,-0.0180945 0.104437,-0.0539646 0.0276181,-0.0358701 0.0415866,-0.101579 0.0415866,-0.19713 0,-0.0879291 -0.0139685,-0.149831 -0.0419016,-0.185382 -0.027937,-0.035874 -0.0628543,-0.0536496 -0.104122,-0.0536496zm0.000952756 1.3215l0.745665 -1.43673 0.135866 0 -0.743126 1.43673 -0.138406 0zm0.589484 -0.370134c0,-0.0977717 0.0244449,-0.180941 0.0733307,-0.24887 0.0492008,-0.0676142 0.120307,-0.101583 0.213953,-0.101583 0.0857087,0 0.1565,0.0304764 0.212685,0.0914213 0.0558701,0.0612677 0.084122,0.150787 0.084122,0.269189 0,0.115551 -0.0285709,0.204114 -0.0850748,0.26665 -0.0568228,0.0622205 -0.126976,0.0933268 -0.21078,0.0933268 -0.0825354,0 -0.151102,-0.0307913 -0.20602,-0.092374 -0.0549173,-0.0619016 -0.0822165,-0.154276 -0.0822165,-0.27776zm0.292047 -0.23522c-0.0422205,0 -0.0771378,0.0180945 -0.104756,0.0539646 -0.0276181,0.0358701 -0.0412677,0.101898 -0.0412677,0.198083 0,0.0866614 0.0139685,0.148244 0.0419016,0.184114 0.027937,0.0358701 0.0622205,0.0539646 0.103169,0.0539646 0.0428543,0 0.0780906,-0.0180945 0.10539,-0.0539646 0.0276181,-0.0358701 0.0415827,-0.101583 0.0415827,-0.19713 0,-0.0879331 -0.0139646,-0.149831 -0.0419016,-0.185705 -0.0279331,-0.0355512 -0.0625354,-0.0533268 -0.104118,-0.0533268z"/></g><rect class="fil1" width="6.82666" height="6.82666"/></svg>
+                </figure>
+                <div class="c-settings"> 
+                  <h2>Luchtbevochtiger</h2>
+                  <div class="o-layout o-layout--align-center o-layout--justify-space-between">
+                    
+                    <p class="c-btn__lead">Automatisch</p> 
+                    <label class="c-btn">
+                      <input type="checkbox" class="js-auto" data-sensor-id="6">
+                      <span class="c-btn__slider  c-btn__round"></span>
+                    </label>
+                  </div>
+                  <div class="o-layout o-layout--align-center o-layout--justify-space-between">
+                    <p class="c-btn__lead">Aan/Uit</p> 
+                    <label class="c-btn">
+                      <input type="checkbox" class="js-switch" data-sensor-id="6" >
+                      <span class="c-btn__slider c-btn__round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </body>
+</html>

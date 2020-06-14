@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sleep Easy</title>
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ber6ijf.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body class="o-row--grey">
+    <div class="c-header__mobile">
+      <nav class="c-mobile-nav">
+        <ul class="o-list c-mobile-nav__list">
+          <li class="c-mobile-nav__item">
+            <a href="index.html" class="c-nav__link c-nav__link--active">Home</a>
+          </li>
+          <li class="c-mobile-nav__item">
+            <a href="device.html" class="c-nav__link">Toestel</a>
+          </li>
+          <li class="c-mobile-nav__item">
+            <a href="historiek.html" class="c-nav__link">Historiek</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header class="o-row o-row-header o-row--md o-row--white js-header">
+      <div class="o-container ">
+        <div class="c-header ">
+          <div class="c-mobile-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__open js-menu" tabindex="0" width="36" height="36" viewBox="0 0 36 36">
+              <g id="Title" transform="translate(-7 -37)">
+                <g id="SideMenu" transform="translate(-5.5 21.5)">
+                  <rect id="Rectangle_77" data-name="Rectangle 77" width="36" height="36" transform="translate(12.5 15.5)" fill="#fff"/>
+                  <g id="Group_6" data-name="Group 6">
+                    <line id="Line_1" data-name="Line 1" x2="18" transform="translate(21.5 27.5)" fill="none" stroke="#333" stroke-width="2"/>
+                    <line id="Line_2" data-name="Line 2" x2="10" transform="translate(25.5 33.5)" fill="none" stroke="#333" stroke-width="2"/>
+                    <line id="Line_3" data-name="Line 3" x2="18" transform="translate(21.5 39.5)" fill="none" stroke="#333" stroke-width="2"/>
+                  </g>
+                </g>
+              </g>
+            </svg>  
+            
+            <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__close u-display-none js-close" tabindex="0" width="36" height="36" viewBox="0 0 36 36">
+              <g id="Group_78" data-name="Group 78" transform="translate(-7 -38)">
+                <rect id="Rectangle_81" data-name="Rectangle 81" width="36" height="36" transform="translate(7 38)" fill="none"/>
+                <g id="close-24px" transform="translate(13 44)">
+                  <path id="Path_15" data-name="Path 15" d="M0,0H24V24H0Z" fill="none"/>
+                  <path id="Path_16" data-name="Path 16" d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/>
+                </g>
+              </g>
+            </svg>
+            
+              
+          </div>
+          <div class="c-header__logo u-3-of-5-bp4 u-1-of-2-bp3">
+            <h2 class="c-logo">
+                Sleep Easy
+            </h2>
+          </div>
+          <div class="c-header__nav">
+            <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                <li class="c-nav__item">
+                  <a href="index.html" class="c-nav__link c-nav__link--active">Home</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="device.html" class="c-nav__link">Toestel</a>
+                </li>
+                <li class="c-nav__item">
+                  <a href="historiek.html" class="c-nav__link">Historiek</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          
+        </div>
+        
+      </div>
+    </header>
+    <section class="o-row o-row--lg">
+      <div class="o-container o-container--white">
+          <article class="o-section o-section--lg">
+              <div class="o-layout  o-layout--align-end o-layout--gutter-lg o-layout--row-reverse">
+                  <div class="o-layout__item o u-1-of-2-bp3 u-mb-md">
+                    <div class="c-circle o js-circle c-circle__color--lg u-mb-sm u-mt-xs js-info-btn" data-sensor-id="0" tabindex="0">68<span class="c-circle--percent">%</span></div>
+                    <div class="c-info u-max-width-xs">
+                      <ul class="o-list js-info c-info__list o-layout o-layout--justify-space-between o-layout--align-end">
+                        <li class="c-info__item" >
+                          
+                          <p class="c-circle c-circle--sm u-color-y"></p>
+                          <p class="c-circle c-circle--sm u-color-lg"></p>
+                          <p class="c-circle c-circle--sm u-color-g"></p>
+                          <p class="c-info__text">Temp</p>
+                          <p class="c-info__text c-info__text--dark">34</p>
+                          <p class="c-info__text c-info__text--sm">°C</p>
+                        </li>
+                        <li class="c-info__item">
+                          <p class="c-circle c-circle--sm u-color-r"></p>
+                          <p class="c-circle c-circle--sm u-color-o"></p>
+                          <p class="c-circle c-circle--sm u-color-y"></p>
+                          <p class="c-circle c-circle--sm u-color-lg"></p>
+                          <p class="c-circle c-circle--sm u-color-g"></p>
+                          <p class="c-info__text">Vochtigheid</p>
+                          <p class="c-info__text c-info__text--dark">70</p>
+                          <p class="c-info__text c-info__text--sm">%</p>
+                        </li>
+                        <li class="c-info__item">
+                          <p class="c-circle c-circle--sm u-color-g"></p>
+                          <p class="c-info__text">Kwaliteit</p>
+                          <p class="c-info__text c-info__text--dark">8</p>
+                          <p class="c-info__text c-info__text--sm">%</p>
+                        </li>
+                        <li class="c-info__item">
+                          <p class="c-circle c-circle--sm u-color-lg"></p>
+                          <p class="c-circle c-circle--sm u-color-g"></p>
+                          <p class="c-info__text">Stof</p>
+                          <p class="c-info__text c-info__text--dark" >1321</p>
+                          <p class="c-info__text c-info__text--sm">pcf/</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="o-layout__item  u-1-of-2-bp3 u-mt-sm">
+                    <div class="c-header__text u-max-width-xs u-mb-xl" data-text-id="0">
+                        <h2>
+                          Algemene Score
+                        </h2>
+                        <p class="c-lead">
+                          De algemene score in de cirkel bestaat uit alle verschillende metingen en worden samengevoegd in één getal. 
+                        </p>
+                        <p class="c-lead u-mb-lg">
+                          Iedere meting is gebaseerd op een kleur, zodat je makkelijk een onderscheid kan maken tussen goede en slechte waarden.
+                        </p>
+                        <ul class="o-list c-range">
+                          <li class="c-range__line u-color-g"></li>
+                          <li class="c-range__line u-color-lg"></li>
+                          <li class="c-range__line u-color-y"></li>
+                          <li class="c-range__line u-color-o"></li>
+                          <li class="c-range__line u-color-r"></li>
+                        </ul>
+                    </div>
+
+                    <div class="c-header__text u-max-width-xs u-mb-xl u-display-none" data-text-id="4">
+                      <h2>
+                        Temperatuur
+                      </h2>
+                      <p class="c-lead">
+                        De ideale slaaptemperatuur ligt tussen <strong>16 en 20 °C</strong>. Bij een te lage of te hoge temperatuur moet het lichaam dit zelf gaan bijstellen. 
+                      </p>
+                      <p class="c-lead u-mb-lg">
+                        Temperatuur is zeer belangrijk voor een goede <a href="https://nl.wikipedia.org/wiki/Remslaap">REM slaap</a>. 
+                        
+                      </p>
+                  </div>
+
+                  <div class="c-header__text u-max-width-xs u-mb-xl u-display-none" data-text-id="3">
+                    <h2>
+                      Luchtvochtigheid
+                    </h2>
+                    <p class="c-lead">
+                      Luchtvochtigheid ligt best tussen
+                      de <strong>45% en 55%</strong>. 
+                    </p>
+                    <p class="c-lead">
+                      Bij een te hoge luchtvochtigheid koelt je lichaam trager af. Dit heeft ook een negatieve invloed op mensen met allergieën. 
+                    </p>
+                    <p class="c-lead u-mb-lg">
+                      Te lage luchtvochtigheid kan zorgen voor verkoudheden, verstopte neus en droge keel en huid. 
+                    </p>
+                  </div>
+
+                  <div class="c-header__text u-max-width-xs u-mb-xl u-display-none" data-text-id="2">
+                    <h2>
+                      Luchtkwaliteit 
+                    </h2>
+                    <p class="c-lead">
+                      Deze sensor meet de gassen en schadelijke stoffen die je binnenshuis kan terugvinden waaronder CO2, alcohol en fijnstof.
+                    </p>
+                    <p class="c-lead">
+                      Deze gassen en schadelijke stoffen kunnen het slaapritme verstoren of zelfs de algemene gezondheid schaden.
+                    </p>
+                  </div>
+
+                  <div class="c-header__text u-max-width-xs u-mb-xl u-display-none" data-text-id="1">
+                    <h2>
+                      Stofdeeltjes
+                    </h2>
+                    <p class="c-lead">
+                      Stof kan een groot probleem vormen dat je niet altijd kan zien. Het kan namelijk zorgen voor allergische reacties of ademhalingsproblemen. Dit kan gebeuren terwijl je slaapt en zo je slaap verstoren.
+                    </p>
+                    <p class="c-lead">
+                      Mensen met astma of huisstofmijtallergie hebben hier veel vaak last van.
+                    </p>
+                  </div>
+                  <div class="c-menu u-max-width-xxs">
+                    <ul class="o-list c-menu__list o-layout--justify-space-between">
+                      <li class="c-circle c-circle--md js-btn c-circle--active-b" data-sensor-id="0" tabindex="0"></li>
+                      <li class="c-circle c-circle--md js-btn" data-sensor-id="4" tabindex="0"></li>
+                      <li class="c-circle c-circle--md js-btn" data-sensor-id="3" tabindex="0"></li>
+                      <li class="c-circle c-circle--md js-btn" data-sensor-id="2" tabindex="0"></li>
+                      <li class="c-circle c-circle--md js-btn" data-sensor-id="1" tabindex="0"></li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+          </article>
+      </div>
+    </section>
+  </body>
+</html>

@@ -2,8 +2,8 @@
 user = mysql
 host = 127.0.0.1
 port = 3306
-password = mysql
-database = homecontrol
+password = Ruffrose77!
+database = projectdb
 
 [application_config]
 driver = 'SQL Server'

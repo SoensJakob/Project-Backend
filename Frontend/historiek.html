@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sleep Easy</title>
+  <link rel="stylesheet" href="style/normalize.css" />
+  <link rel="stylesheet" href="style/screen.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/ber6ijf.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="script/moments.js"></script>
+  <script src="script/dataHandler.js"></script>
+  <script src="script/app.js"></script>
+</head>
+
+<body class="o-row--grey">
+  <div class="c-header__mobile">
+    <nav class="c-mobile-nav">
+      <ul class="o-list c-mobile-nav__list">
+        <li class="c-mobile-nav__item">
+          <a href="index.html" class="c-nav__link">Home</a>
+        </li>
+        <li class="c-mobile-nav__item">
+          <a href="device.html" class="c-nav__link">Toestel</a>
+        </li>
+        <li class="c-mobile-nav__item">
+          <a href="historiek.html" class="c-nav__link c-nav__link--active">Historiek</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <header class="o-row o-row-header o-row--md o-row--white js-header">
+    <div class="o-container ">
+      <div class="c-header ">
+        <div class="c-mobile-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__open js-menu" tabindex="0" width="36" height="36"
+            viewBox="0 0 36 36">
+            <g id="Title" transform="translate(-7 -37)">
+              <g id="SideMenu" transform="translate(-5.5 21.5)">
+                <rect id="Rectangle_77" data-name="Rectangle 77" width="36" height="36" transform="translate(12.5 15.5)"
+                  fill="#fff" />
+                <g id="Group_6" data-name="Group 6">
+                  <line id="Line_1" data-name="Line 1" x2="18" transform="translate(21.5 27.5)" fill="none"
+                    stroke="#333" stroke-width="2" />
+                  <line id="Line_2" data-name="Line 2" x2="10" transform="translate(25.5 33.5)" fill="none"
+                    stroke="#333" stroke-width="2" />
+                  <line id="Line_3" data-name="Line 3" x2="18" transform="translate(21.5 39.5)" fill="none"
+                    stroke="#333" stroke-width="2" />
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" class="c-mobile-menu__close u-display-none js-close" tabindex="0" width="36"
+            height="36" viewBox="0 0 36 36">
+            <g id="Group_78" data-name="Group 78" transform="translate(-7 -38)">
+              <rect id="Rectangle_81" data-name="Rectangle 81" width="36" height="36" transform="translate(7 38)"
+                fill="none" />
+              <g id="close-24px" transform="translate(13 44)">
+                <path id="Path_15" data-name="Path 15" d="M0,0H24V24H0Z" fill="none" />
+                <path id="Path_16" data-name="Path 16"
+                  d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z" />
+              </g>
+            </g>
+          </svg>
+
+
+        </div>
+        <div class="c-header__logo u-3-of-5-bp4 u-1-of-2-bp3">
+          <h2 class="c-logo">
+            Sleep Easy
+          </h2>
+        </div>
+        <div class="c-header__nav">
+          <nav class="c-nav">
+            <ul class="o-list c-nav__list">
+              <li class="c-nav__item">
+                <a href="index.html" class="c-nav__link ">Home</a>
+              </li>
+              <li class="c-nav__item">
+                <a href="device.html" class="c-nav__link">Toestel</a>
+              </li>
+              <li class="c-nav__item">
+                <a href="historiek.html" class="c-nav__link c-nav__link--active">Historiek</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+  <section class="o-row  o-row--lg">
+    <div class="o-container u-max-width-lg">
+      <div class="c-historiek">
+
+
+        <div class="c-sensors">
+          
+          <div class="js-sensors">
+
+          </div>
+          <div class="c-historiek__periode">
+            <h3 class="c-historiek__title">Periode</h3>
+            <ul class="o-list o-layout">
+              <li tabindex="0"><p class="c-historiek__btn js-periode" data-periode-naam="t-month" >3-Maandelijks</p></li>
+              <li tabindex="0"><p class="c-historiek__btn js-periode" data-periode-naam="month" >Maandelijks</p></li>
+              <li tabindex="0"><p class="c-historiek__btn js-periode c-historiek__btn2--active" data-periode-naam="day">Dagelijks</p></li>
+            </ul>
+          </div>
+          <div class="c-date">
+            <input type="date" class="js-date c-historiek__date" name="date">
+          </div>
+        </div>
+        <div class="c-graph">
+
+          <canvas id='myChart' style="min-height: 350px" aria-label="Historiek van Sensor Data" role="img"> </canvas>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
