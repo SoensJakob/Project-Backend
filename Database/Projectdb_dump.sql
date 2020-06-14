@@ -40,6 +40,7 @@ CREATE TABLE `device` (
 
 LOCK TABLES `device` WRITE;
 /*!40000 ALTER TABLE `device` DISABLE KEYS */;
+INSERT INTO `device` VALUES (1,'Stofdeeltjes','Stofdeeltjes opmeten','pcf','Stof'),(2,'Luchtkwaliteit','Algemene Luchtkwaliteit van gasses en chemicals','%','Kwaliteit'),(3,'Luchtvochtigheid','Meet Luchtvochtigheid','%','Vochtigheid'),(4,'Temperatuur','Meet Temperatuur','°C','Temp'),(5,'Ventilator','Filtert de lucht',NULL,NULL),(6,'Luchtbevochtiger','Verhoogt de luchtvochtigheid',NULL,NULL);
 /*!40000 ALTER TABLE `device` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,6 +93,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
+INSERT INTO `status` VALUES ('HIGH'),('LOW'),('MEDIUM'),('OFF'),('ON');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-14 14:53:32
+-- Dump completed on 2020-06-14 22:59:00
